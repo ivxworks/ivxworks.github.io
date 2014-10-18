@@ -3,7 +3,7 @@ layout: post
 title: "Make Your Blog On GitHub"
 date: 2014-10-18 10:36:24 +0800
 comments: true
-categories: 
+categories: octopress
 ---
 在windows8.1环境下利用octopress在GitHub上搭建一个属于自己博客。
 
@@ -16,7 +16,7 @@ categories:
 准备GitHub
 --
 首先你肯定得有一个GitHub账号了，然后建立一个名字为yourname.github.io的repository，其中yourname就是你GitHub的账户名字啦。
-安装刚下载好的GitHub windows客户端，安装好后打开GitShell输入：*ssh-keygen  -t rsa*，一路回车，创建好公钥和私钥。然后到* c:\Users\用户名\.ssh\ *  目录找到   *id_rsa.pub*用记事本打开复制全部内容。然后到GitHub网站，进入设置页面（点击网站右上角的那个齿轮），然后进入SSH Keys（在左边栏点击即可），然后点击Add SSH Key ，随便起个名字，然后将刚复制的内容粘贴到里边保存即可。
+安装刚下载好的GitHub windows客户端，安装好后打开GitShell输入：*ssh-keygen  -t rsa*，一路回车，创建好公钥和私钥。然后到” c:\Users\用户名\.ssh\ “  目录找到   “id_rsa.pub”用记事本打开复制全部内容。然后到GitHub网站，进入设置页面（点击网站右上角的那个齿轮），然后进入SSH Keys（在左边栏点击即可），然后点击Add SSH Key ，随便起个名字，然后将刚复制的内容粘贴到里边保存即可。
 
 安装Ruby
 --
@@ -79,3 +79,7 @@ categories:
     rake preview
 
 至此一个博客已经搭建好了，当然这只是刚刚开始，后边的优化还多这呢~~
+
+参考：
+http://oec2003.github.io/blog/2013/06/26/octopress-blog-setting/
+http://wangzz.github.io/blog/2014/04/28/custom-your-octopress-blog/
