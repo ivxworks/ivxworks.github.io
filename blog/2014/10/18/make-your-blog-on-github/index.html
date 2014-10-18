@@ -80,6 +80,9 @@ ruby和DevKit，可以去http://rubyinstaller.org/ &hellip;">
 
 <time class='entry-date' datetime='2014-10-18T10:36:24+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:36 am</span></time>
         
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://ivxworks.github.io">Comments</a>
+        
       </p>
     
   </header>
@@ -101,7 +104,7 @@ ruby和DevKit，可以去http://rubyinstaller.org/ &hellip;">
 <h2>准备GitHub</h2>
 
 <p>首先你肯定得有一个GitHub账号了，然后建立一个名字为yourname.github.io的repository，其中yourname就是你GitHub的账户名字啦。
-安装刚下载好的GitHub windows客户端，安装好后打开GitShell输入：<em>ssh-keygen  -t rsa</em>，一路回车，创建好公钥和私钥。然后到<em> c:\Users\用户名.ssh\ *  目录找到   </em>id_rsa.pub*用记事本打开复制全部内容。然后到GitHub网站，进入设置页面（点击网站右上角的那个齿轮），然后进入SSH Keys（在左边栏点击即可），然后点击Add SSH Key ，随便起个名字，然后将刚复制的内容粘贴到里边保存即可。</p>
+安装刚下载好的GitHub windows客户端，安装好后打开GitShell输入：<em>ssh-keygen  -t rsa</em>，一路回车，创建好公钥和私钥。然后到” c:\Users\用户名.ssh\ “  目录找到   “id_rsa.pub”用记事本打开复制全部内容。然后到GitHub网站，进入设置页面（点击网站右上角的那个齿轮），然后进入SSH Keys（在左边栏点击即可），然后点击Add SSH Key ，随便起个名字，然后将刚复制的内容粘贴到里边保存即可。</p>
 
 <h2>安装Ruby</h2>
 
@@ -197,6 +200,12 @@ rake preview
 <time class='entry-date' datetime='2014-10-18T10:36:24+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:36 am</span></time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
 
     </p>
     
@@ -216,12 +225,24 @@ rake preview
   </footer>
 </article>
 
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
 </div>
 
 <aside class="sidebar">
   
-    <section>
-  <h1>Recent Posts</h1>
+    <section> 
+  <h1>文章分类</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+ 
+  </ul> 
+</section><section>
+  <h1>最新发表</h1>
   <ul id="recent_posts">
     
       <li class="post">
@@ -230,7 +251,16 @@ rake preview
     
   </ul>
 </section>
+<section>
+    <h1>新浪微博</h1>
+    <ul id="weibo">
+    <li>
 
+   <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1566786840&verifier=ac70f406&dpc=1"></iframe>
+
+      </li>
+    </ul>
+</section>
 
 
 
@@ -248,6 +278,22 @@ rake preview
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'ivxworks';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ivxworks.github.io/blog/2014/10/18/make-your-blog-on-github/';
+        var disqus_url = 'http://ivxworks.github.io/blog/2014/10/18/make-your-blog-on-github/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
