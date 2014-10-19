@@ -4,7 +4,7 @@
   <title><![CDATA[iVxWorks'Blog]]></title>
   <link href="http://ivxworks.github.io/atom.xml" rel="self"/>
   <link href="http://ivxworks.github.io/"/>
-  <updated>2014-10-19T15:26:17+08:00</updated>
+  <updated>2014-10-19T15:38:14+08:00</updated>
   <id>http://ivxworks.github.io/</id>
   <author>
     <name><![CDATA[iVxWorks]]></name>
@@ -12,17 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[测试]]></title>
-    <link href="http://ivxworks.github.io/blog/2014/10/19/ce-shi/"/>
-    <updated>2014-10-19T14:38:06+08:00</updated>
-    <id>http://ivxworks.github.io/blog/2014/10/19/ce-shi</id>
-    <content type="html"><![CDATA[<h1>测试一下汉字</h1>
-
-<p>这是一片测试文章！！谢谢。</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Make Your Blog on GitHub]]></title>
