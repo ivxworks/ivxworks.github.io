@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Make Your Blog on GitHub - iVxWorks&#8217;Blog</title>
+  <meta name="author" content="iVxWorks">
+
+  
+  <meta name="description" content="在windows8.1环境下利用octopress在GitHub上搭建一个属于自己博客。 需要的软件 GitHub的windows客户端，可以去https://windows.github.com/ 下载
+ruby和DevKit，可以去http://rubyinstaller.org/ &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://ivxworks.github.io/blog/2014/10/18/make-your-blog-on-github">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="iVxWorks'Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">iVxWorks&#8217;Blog</a></h1>
+  
+    <h2>淡定 安定 稳定</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:ivxworks.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Make Your Blog on GitHub</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-18T10:36:24+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:36 am</span></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://ivxworks.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>在windows8.1环境下利用octopress在GitHub上搭建一个属于自己博客。</p>
+
+<h2>需要的软件</h2>
+
+<!-- more -->
+
+
+<ol>
+<li>GitHub的windows客户端，可以去<a href="https://windows.github.com/">https://windows.github.com/</a> 下载</li>
+<li>ruby和DevKit，可以去<a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a> 下载，尽量下载最新版本。</li>
+</ol>
+
+
+<h2>准备GitHub</h2>
+
+<p>首先你肯定得有一个GitHub账号了，然后建立一个名字为yourname.github.io的repository，其中yourname就是你GitHub的账户名字啦。
+安装刚下载好的GitHub windows客户端，安装好后打开GitShell输入：<em>ssh-keygen  -t rsa</em>，一路回车，创建好公钥和私钥。然后到” c:\Users\用户名.ssh\ “  目录找到   “id_rsa.pub”用记事本打开复制全部内容。然后到GitHub网站，进入设置页面（点击网站右上角的那个齿轮），然后进入SSH Keys（在左边栏点击即可），然后点击Add SSH Key ，随便起个名字，然后将刚复制的内容粘贴到里边保存即可。</p>
+
+<h2>安装Ruby</h2>
+
+<p>首先安装RubyInstaller，安装的时候一定要勾选“Add Ruby executables to your PATH”。然后解压缩DevKit，路径中别包好中文。然后打开“Start Command Prompt with Ruby”，，cd到DevKit刚解压到的目录，依次输入如下命令</p>
+
+<pre><code>ruby dk.rb init
+ruby dk.rb install
+gem install rdiscount --platform=ruby
+</code></pre>
+
+<p>执行这些命令的时候可能会出现错误，不要慌张，多试几次就好了，可能是要下载的网站被墙掉了。</p>
+
+<h2>安装Octopress</h2>
+
+<p>打开GitShell，输入</p>
+
+<pre><code>git clone git://github.com/imathis/octopress.git octopress
+</code></pre>
+
+<p>然后依次输入以下命令</p>
+
+<pre><code>cd octopress
+gem install bundler
+bundle install 
+</code></pre>
+
+<p>这个时候就可以在本地预览搭建好的博客了输入</p>
+
+<pre><code>rake generate
+rake preview
+</code></pre>
+
+<p>然后在浏览器输入 127.0.0.1:4000 即可看到搭建好的博客啦。当然可以做一个个性化的配置，则修改_config.yml中url、title、subtitle、author等等。</p>
+
+<h2>发布到GitHub</h2>
+
+<p>配置octopress和你的github的绑定，打开GitShll输入</p>
+
+<pre><code>rake setup_github_pages
+</code></pre>
+
+<p>按照提示输入github项目的网址，比如我的 <code>git@github.com:ivxworks/ivxworks.github.io.git</code>
+然后在shell中输入</p>
+
+<pre><code>rake deploy
+</code></pre>
+
+<p>至此，博客已经搭建好，等上10几分钟，在浏览器中输入你的地址即可访问啦。
+我们执行rake deploy的时候只是将_deploy目录下的内容推到了github的master分支。为了安全期间，我们要将博客的全部内容推到source分支，这样当博客出现问题的时候可以用source分支来恢复博客，具体操作如下，cd到octopress根目录，在shell中输入</p>
+
+<pre><code>git add .
+git commit -m 'your message'
+git push origin source
+</code></pre>
+
+<h2>写博客</h2>
+
+<p>写博客前最好先同步一下本地和github</p>
+
+<pre><code>cd octopress
+git pull origin source
+cd ./_deploy
+git pull origin master
+</code></pre>
+
+<p>开始写博客</p>
+
+<pre><code>rake new_post["New Post"]
+rake generate
+git add .
+git commit -am "Some comment here." 
+git push origin source
+rake deploy
+rake preview
+</code></pre>
+
+<p>至此一个博客已经搭建好了，当然这只是刚刚开始，后边的优化还多这呢~~</p>
+
+<p>参考：
+<a href="http://oec2003.github.io/blog/2013/06/26/octopress-blog-setting/">http://oec2003.github.io/blog/2013/06/26/octopress-blog-setting/</a>
+<a href="http://wangzz.github.io/blog/2014/04/28/custom-your-octopress-blog/">http://wangzz.github.io/blog/2014/04/28/custom-your-octopress-blog/</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">iVxWorks</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-10-18T10:36:24+08:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:36 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/octopress/'>octopress</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://ivxworks.github.io/blog/2014/10/18/make-your-blog-on-github/" data-via="" data-counturl="http://ivxworks.github.io/blog/2014/10/18/make-your-blog-on-github/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/10/19/ce-shi/" title="Next Post: 测试">测试 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section> 
+  <h1>文章分类</h1> 
+  <ul id="categories"> 
+    <li class='category'><a href='/blog/categories/octopress/'>octopress (1)</a></li>
+ 
+  </ul> 
+</section><section>
+  <h1>最新发表</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/10/19/ce-shi/">测试</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/18/make-your-blog-on-github/">Make Your Blog on GitHub</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+    <h1>新浪微博</h1>
+    <ul id="weibo">
+    <li>
+
+   <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=1566786840&verifier=ac70f406&dpc=1"></iframe>
+
+      </li>
+    </ul>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - iVxWorks -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'ivxworks';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://ivxworks.github.io/blog/2014/10/18/make-your-blog-on-github/';
+        var disqus_url = 'http://ivxworks.github.io/blog/2014/10/18/make-your-blog-on-github/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
