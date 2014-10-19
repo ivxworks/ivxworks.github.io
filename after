@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# = 0 ];then
+	echo "输入commit参数"
+	exit
+fi
+
+rake generate
+git add .
+git commit -am "$1"
+git push origin source
+rake deploy
